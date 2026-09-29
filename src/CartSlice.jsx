@@ -32,7 +32,9 @@ if (itemToUpdate) {
     },
   },
 });
-
+const formatPrice=(n)=>`${n}`;
 export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
-
+export const selectCartItems=(state)=>state.cart.items;
+export const selectTotalQuantity=(state)=>state.cart.items.reduce((sum,item)=>sum+item.quantity,0);
+export const selectTotalAmount=(state)=>state.cart.items.reduce((sum,item)=>sum + item.cost * item.quantity,0);
 export default CartSlice.reducer;
