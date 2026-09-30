@@ -2,8 +2,8 @@
 
 Paradise Nursery — Where Green Meets Serenity. A React + Redux Toolkit storefront for houseplants: browse plants by category, add them to a cart, adjust quantities and see live totals.
 
-Live app: `https://<your-github-username>.github.io/<your-repo-name>/`
-Repository:`https://github.com/<your-github-username>/<your-repo-name>`
+Live app: `https://ravikgupta29.github.io/e-plantShopping/`
+Repository:`https://github.com/ravikgupta29/e-plantShopping`
 
 2.Features
 
