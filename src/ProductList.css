@@ -47,6 +47,18 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.category-title {
+    width: fit-content;
+    min-width: min(360px, 100%);
+    margin: 24px auto 28px;
+    padding: 4px 24px;
+    text-align: center;
+    font-size: 1.7rem;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;

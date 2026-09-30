@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity, selectCartItems,selectTotalAmount,selectTotalQuantity } from './CartSlice';
 import './CartItem.css';
 
-const CartItem = ({ onContinueShopping }) => {
+const CartItem = ({ onContinueShopping,onItemRemoved }) => {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart.items);
   const items=useSelector(selectCartItems);
@@ -31,10 +31,11 @@ const handleCheckoutShopping = (e) => {
 
   const handleRemove = (item) => {
   dispatch(removeItem(item.name));
+  onItemRemoved(item.name);
   };
 
-
 const formatPrice=(n)=>`${n}`;
+
   return (
     <main>    
         <div className="cart-container">
@@ -55,7 +56,7 @@ const formatPrice=(n)=>`${n}`;
                 <span className="cart-item-quantity-value">{item.quantity}</span>
                 <button className="cart-item-button cart-item-button-inc" onClick={() => handleIncrement(item)}>+</button>
               </div>
-              <div className="cart-item-total">Total: ${formatPrice(item.cost)*item.quantity}</div>
+              <div className="cart-item-total">Total: ${Number(item.cost.replace('$', '')) * item.quantity}</div>
               <button className="cart-item-delete" onClick={() => handleRemove(item)}>Delete</button>
             </div>
           </div>
